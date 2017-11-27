@@ -20,7 +20,8 @@ public class Chess {
         jN=JN;
         tjb="00:00:00:00";
         tjn="00:00:00:00";
-        Juego.Juego(jB,jN);
+        Juego.Juego(jB,jN,board);
     }
+    
     
 }

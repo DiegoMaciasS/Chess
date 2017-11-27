@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.Timer;
+import Datos.*;
 /**
  *
  * @author COMPAQ
@@ -33,11 +34,11 @@ public class Juego extends javax.swing.JFrame {
     ImageIcon torreN;
     
     public String Motivo="Default";
-    public Juego(String NB,String NN) {
+    public Juego(String NB,String NN,Tablero board) {
         initComponents();
         jLabel1.setText(NB);
         jLabel3.setText(NN);
-        cargarTablero();
+        cargarTablero(board);
     }
     
     private void cargarFichas(){
@@ -78,49 +79,76 @@ public class Juego extends javax.swing.JFrame {
         torreN=new ImageIcon(medio.getImage().getScaledInstance(45, 45, Image.SCALE_DEFAULT));
     }
     
-    private void cargarTablero(){
+    private void cargarTablero(Tablero board){
         Imagen image = new Imagen();
         jPanel1.add(image);
+        int xCont=0,yCont=0;
+        cargarFichas();
         for(int x=0;x<jPanel1.getComponentCount();x++){//recorre los componentes de jPanel1
             if(jPanel1.getComponent(x) instanceof JLabel){//selecciona los que son JLabel
                 JLabel label = (JLabel) jPanel1.getComponent(x);//instancia el jLabel seleccionado
+                if(board.getBoard()[xCont][yCont]==null){
+                    label.setIcon(null);
+                }
+                else{
+                    Ficha ficha= board.getBoard()[xCont][yCont];
+                    if(ficha instanceof Torre){
+                        if(ficha.getColor()=='b'){
+                            label.setIcon(torreB);
+                        }
+                        else{
+                            label.setIcon(torreN);
+                        }
+                    }
+                    else if(ficha instanceof Caballo){
+                        if(ficha.getColor()=='b'){
+                            label.setIcon(caballoB);
+                        }
+                        else{
+                            label.setIcon(caballoN);
+                        }
+                    }
+                    else if(ficha instanceof Alfil){
+                        if(ficha.getColor()=='b'){
+                            label.setIcon(alfilB);
+                        }
+                        else{
+                            label.setIcon(alfilN);
+                        }
+                    }
+                    else if(ficha instanceof Reina){
+                        if(ficha.getColor()=='b'){
+                            label.setIcon(reinaB);
+                        }
+                        else{
+                            label.setIcon(reinaN);
+                        }
+                    }
+                    else if(ficha instanceof Rey){
+                        if(ficha.getColor()=='b'){
+                            label.setIcon(reyB);
+                        }
+                        else{
+                            label.setIcon(reyN);
+                        }
+                    }
+                    else if(ficha instanceof Peon){
+                        if(ficha.getColor()=='b'){
+                            label.setIcon(peonB);
+                        }
+                        else{
+                            label.setIcon(peonN);
+                        }
+                    }
+                }
+                xCont+=1;
+                if(xCont==8){
+                    xCont=0;
+                    yCont+=1;
+                }
             }
         }
         
-        cargarFichas();
-        
-        label11.setIcon(torreN);
-        label12.setIcon(caballoN);
-        label13.setIcon(alfilN);
-        label14.setIcon(reinaN);
-        label15.setIcon(reyN);
-        label16.setIcon(alfilN);
-        label17.setIcon(caballoN);
-        label18.setIcon(torreN);
-        label21.setIcon(peonN);
-        label22.setIcon(peonN);
-        label23.setIcon(peonN);
-        label24.setIcon(peonN);
-        label25.setIcon(peonN);
-        label26.setIcon(peonN);
-        label27.setIcon(peonN);
-        label28.setIcon(peonN);
-        label81.setIcon(torreB);
-        label82.setIcon(caballoB);
-        label83.setIcon(alfilB);
-        label84.setIcon(reinaB);
-        label85.setIcon(reyB);
-        label86.setIcon(alfilB);
-        label87.setIcon(caballoB);
-        label88.setIcon(torreB);
-        label71.setIcon(peonB);
-        label72.setIcon(peonB);
-        label73.setIcon(peonB);
-        label74.setIcon(peonB);
-        label75.setIcon(peonB);
-        label76.setIcon(peonB);
-        label77.setIcon(peonB);
-        label78.setIcon(peonB);
         this.repaint();
     }
     
@@ -773,13 +801,12 @@ public class Juego extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         Motivo="UNvsAndes";
-        cargarTablero();
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public static void Juego(String NB,String NN) {
+    public static void Juego(String NB,String NN,Tablero board) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -806,7 +833,7 @@ public class Juego extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Juego(NB,NN).setVisible(true);
+                new Juego(NB,NN,board).setVisible(true);
             }
         });
     }

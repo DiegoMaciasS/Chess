@@ -34,6 +34,24 @@ public class Tablero {
             return '0';
         }
     }
+
+    public static Ficha[][] getBoard() {
+        return board;
+    }
+
+    public static void setBoard(Ficha[][] board) {
+        Tablero.board = board;
+    }
+
+    public static Ficha[][] getMuertas() {
+        return muertas;
+    }
+
+    public static void setMuertas(Ficha[][] muertas) {
+        Tablero.muertas = muertas;
+    }
+    
+    
     
     public static void Matar(int x, int y){
         //metodo para matar ficha
