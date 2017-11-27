@@ -66,4 +66,9 @@ public abstract class Ficha {
                 return false;
         }
     }
+    
+    @Override
+    public String toString() {
+        return "";
+    }
 }

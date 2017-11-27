@@ -25,5 +25,8 @@ public class Torre extends Ficha {
         return true; //CAAAAAAAAAAMBIIIIIIAAAAARRRRRRRRRRKJIEFNBÑOBIUEF
     }
     
-
+    @Override
+    public String toString() {
+        return "t";
+    }
 }

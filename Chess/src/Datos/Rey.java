@@ -21,4 +21,8 @@ public class Rey extends Ficha{
         return true;
     }
     
+    @Override
+    public String toString() {
+        return "r";
+    }
 }

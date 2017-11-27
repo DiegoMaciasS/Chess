@@ -21,4 +21,8 @@ public class Caballo extends Ficha{
         return true;
     }
     
+    @Override
+    public String toString() {
+        return "c";
+    }
 }

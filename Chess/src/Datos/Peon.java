@@ -33,4 +33,8 @@ public class Peon extends Ficha{
         }
     }
     
+    @Override
+    public String toString() {
+        return "p";
+    }
 }

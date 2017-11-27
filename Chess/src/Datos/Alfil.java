@@ -48,5 +48,12 @@ public class Alfil extends Ficha{
         }
     
     }
+
+    @Override
+    public String toString() {
+        return "a";
+    }
+    
+    
     
 }

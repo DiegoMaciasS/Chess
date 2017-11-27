@@ -92,53 +92,56 @@ public class Juego extends javax.swing.JFrame {
                 }
                 else{
                     Ficha ficha= board.getBoard()[xCont][yCont];
-                    if(ficha instanceof Torre){
+                    label.setText(String.valueOf(xCont)+String.valueOf(yCont));
+                    switch(ficha.toString()){
+                        case "t":
                         if(ficha.getColor()=='b'){
                             label.setIcon(torreB);
                         }
                         else{
                             label.setIcon(torreN);
                         }
-                    }
-                    else if(ficha instanceof Caballo){
+                    break;
+                        case "c":
                         if(ficha.getColor()=='b'){
                             label.setIcon(caballoB);
                         }
                         else{
                             label.setIcon(caballoN);
                         }
-                    }
-                    else if(ficha instanceof Alfil){
+                    break;
+                        case "a":
                         if(ficha.getColor()=='b'){
                             label.setIcon(alfilB);
                         }
                         else{
                             label.setIcon(alfilN);
                         }
-                    }
-                    else if(ficha instanceof Reina){
+                    break;
+                        case "q":
                         if(ficha.getColor()=='b'){
                             label.setIcon(reinaB);
                         }
                         else{
                             label.setIcon(reinaN);
                         }
-                    }
-                    else if(ficha instanceof Rey){
+                    break;
+                        case "r":
                         if(ficha.getColor()=='b'){
                             label.setIcon(reyB);
                         }
                         else{
                             label.setIcon(reyN);
                         }
-                    }
-                    else if(ficha instanceof Peon){
+                    break;
+                        case "p":
                         if(ficha.getColor()=='b'){
                             label.setIcon(peonB);
                         }
                         else{
                             label.setIcon(peonN);
                         }
+                    break;
                     }
                 }
                 xCont+=1;

@@ -1,39 +1,42 @@
 package Datos;
-import Datos.Peon;
+import Datos.*;
 
 public class Tablero {
     public static Ficha board[][]=new Ficha[8][8];
     public static Ficha muertas[][]=new Ficha[8][4];
     public Tablero() {
-        for(int i=0;i<8;i++){
-            for(int j=0;j<8;j++){
-                switch(i){
+        for(int j=0;j<8;j++){
+            for(int i=0;i<8;i++){
+                System.out.println(i+","+j);
+                switch(j){
                     case 0:
-                        if(j==0){
-                            this.board[i][j]=new Torre(i,j'n');
+                        switch(i){
+                            case 0:
+                            this.board[i][j]=new Torre(i,j,'n');
+                        break;
+                            case 1:
+                            this.board[i][j]=new Caballo(i,j,'n');
+                        break;
+                            case 2:
+                            this.board[i][j]=new Alfil(i,j,'n');
+                        break;
+                            case 3:
+                            this.board[i][j]=new Reina(i,j,'n');
+                        break;
+                            case 4:
+                            this.board[i][j]=new Rey(i,j,'n');
+                        break;
+                            case 5:
+                            this.board[i][j]=new Alfil(i,j,'n');
+                        break;
+                            case 6:
+                            this.board[i][j]=new Caballo(i,j,'n');
+                        break;
+                            case 7:
+                            this.board[i][j]=new Torre(i,j,'n');
+                            break;
                         }
-                        else if(j==1){
-                            this.board[i][j]=new Caballo(i,j'n');
-                        }
-                        else if(j==2){
-                            this.board[i][j]=new Alfil(i,j'n');
-                        }
-                        else if(j==3){
-                            this.board[i][j]=new Reina(i,j'n');
-                        }
-                        else if(j==4){
-                            this.board[i][j]=new Rey(i,j'n');
-                        }
-                        else if(j==5){
-                            this.board[i][j]=new Alfil(i,j'n');
-                        }
-                        else if(j==6){
-                            this.board[i][j]=new Caballo(i,j'n');
-                        }
-                        else if(j==7){
-                            this.board[i][j]=new Torre(i,j'n');
-                        }
-                        else break;
+                        break;
                     case 1:
                         this.board[i][j]=new Peon(i,j,'n');
                         break;
@@ -41,31 +44,33 @@ public class Tablero {
                         this.board[i][j]=new Peon(i,j,'b');
                         break;
                     case 7:
-                         if(j==0){
-                            this.board[i][j]=new Torre(i,j'b');
+                        switch(i){
+                            case 0:
+                            this.board[i][j]=new Torre(i,j,'b');
+                        break;
+                            case 1:
+                            this.board[i][j]=new Caballo(i,j,'b');
+                        break;
+                            case 2:
+                            this.board[i][j]=new Alfil(i,j,'b');
+                        break;
+                            case 3:
+                            this.board[i][j]=new Reina(i,j,'b');
+                        break;
+                            case 4:
+                            this.board[i][j]=new Rey(i,j,'b');
+                        break;
+                            case 5:
+                            this.board[i][j]=new Alfil(i,j,'b');
+                        break;
+                            case 6:
+                            this.board[i][j]=new Caballo(i,j,'b');
+                        break;
+                            case 7:
+                            this.board[i][j]=new Torre(i,j,'b');
+                            break;
                         }
-                        else if(j==1){
-                            this.board[i][j]=new Caballo(i,j'b');
-                        }
-                        else if(j==2){
-                            this.board[i][j]=new Alfil(i,j'b');
-                        }
-                        else if(j==3){
-                            this.board[i][j]=new Reina(i,j'b');
-                        }
-                        else if(j==4){
-                            this.board[i][j]=new Rey(i,j'b');
-                        }
-                        else if(j==5){
-                            this.board[i][j]=new Alfil(i,j'b');
-                        }
-                        else if(j==6){
-                            this.board[i][j]=new Caballo(i,j'b');
-                        }
-                        else if(j==7){
-                            this.board[i][j]=new Torre(i,j'b');
-                        }
-                        else break;
+                        break;
                     default:
                         this.board[i][j]=null;
                         break;

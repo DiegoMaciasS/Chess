@@ -52,4 +52,9 @@ public class Reina extends Ficha{
             return false;
         }
     }
+    
+    @Override
+    public String toString() {
+        return "q";
+    }
 }
