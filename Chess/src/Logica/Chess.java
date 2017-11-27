@@ -22,6 +22,6 @@ public class Chess {
         tjn="00:00:00:00";
         Juego.Juego(jB,jN,board);
     }
-    
+      
     
 }

@@ -41,44 +41,44 @@ public class Tablero {
                         this.board[j][i]=new Peon(j,i,'n');
                         break;
                     case 6:System.out.println(i+","+j);
-                        System.out.println(board[0][0].toString()+board[0][0].getColor());
-                        this.board[j][i]=new Peon(i,j,'b');
-                        System.out.println(board[0][0].toString()+board[0][0].getColor());
-                        System.out.println(board[i][j].toString()+board[i][j].getColor());
+                        
+                        this.board[j][i]=new Peon(j,i,'b');
                         break;
                     case 7:
-                        switch(i){
+                        switch(j){
                             case 0:
-                            this.board[j][i]=new Torre(i,j,'b');
+                            this.board[j][i]=new Torre(j,i,'b');
                         break;
                             case 1:
-                            this.board[j][i]=new Caballo(i,j,'b');
+                            this.board[j][i]=new Caballo(j,i,'b');
                         break;
                             case 2:
-                            this.board[j][i]=new Alfil(i,j,'b');
+                            this.board[j][i]=new Alfil(j,i,'b');
                         break;
                             case 3:
-                            this.board[j][i]=new Reina(i,j,'b');
+                            this.board[j][i]=new Reina(j,i,'b');
                         break;
                             case 4:
-                            this.board[j][i]=new Rey(i,j,'b');
+                            this.board[j][i]=new Rey(j,i,'b');
                         break;
                             case 5:
-                            this.board[j][i]=new Alfil(i,j,'b');
+                            this.board[j][i]=new Alfil(j,i,'b');
                         break;
                             case 6:
-                            this.board[j][i]=new Caballo(i,j,'b');
+                            this.board[j][i]=new Caballo(j,i,'b');
                         break;
                             case 7:
-                            this.board[j][i]=new Torre(i,j,'b');
+                            this.board[j][i]=new Torre(j,i,'b');
                             break;
                         }
                         break;
                     default:
-                        this.board[i][j]=null;
+                        this.board[j][i]=null;
                         break;
                 }
-                System.out.print(this.board[0][0].getColor());
+                /*System.out.print(this.board[0][1].getColor());
+                System.out.print(this.board[0][2].getColor());
+                System.out.print(this.board[0][0].getColor());*/
             }
         }
     }
@@ -141,7 +141,7 @@ public class Tablero {
         if(board[x][y].toString()== "q" && board[x][y].getColor()=='b'){
             board[x][y]=muertas[3][3];
             }
-        }
+        
         
         if(board[x][y].toString()== "t" && board[x][y].getColor()=='n'){
             if(muertas[0][0]!=null){
@@ -173,7 +173,7 @@ public class Tablero {
         if(board[x][y].toString()== "q" && board[x][y].getColor()=='n'){
             board[x][y]=muertas[3][0];
         }
-        }
+        
 
         if(board[x][y].toString()== "p" && board[x][y].getColor()=='n'){
             for(int h=0;h<8;h++){
@@ -183,14 +183,15 @@ public class Tablero {
                     board[x][y]=muertas[h][1];
                 }
          if(board[x][y].toString()== "p" && board[x][y].getColor()=='b'){
-            for(int h=0;h<8;h++){
-                if(muertas[h][2]!=null){
+            for(int z=0;z<8;z++){
+                if(muertas[z][2]!=null){
                 }
                 else{
-                    board[x][y]=muertas[h][2];
+                    board[x][y]=muertas[z][2];
                 }
-          }
-        
+            }
+            }
+        }
+        }
     }
-    
 }

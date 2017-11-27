@@ -3,7 +3,7 @@ package Datos;
 
 public abstract class Ficha {
     private static int x,y;
-    private static char color;
+    private char color;
     private static boolean movido;
 
     public Ficha(int x, int y, char color) {
@@ -29,7 +29,7 @@ public abstract class Ficha {
         this.y = y;
     }
 
-    public static char getColor() {
+    public char getColor() {
         return color;
     }
 
@@ -54,13 +54,13 @@ public abstract class Ficha {
                 if(getColor()=='n')
                     return false;
                 else
-                    //Sacar ficha de juego
+                    Tablero.Matar(x, y);
                     return true;
             case 'b':
                 if(getColor()=='b')
                     return false;
                 else
-                    //Sacar ficha de juego
+                    Tablero.Matar(x, y);
                     return true;
             default:
                 return false;
