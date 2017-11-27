@@ -110,8 +110,87 @@ public class Tablero {
     
     
     
-    public static void Matar(int x, int y){
-        //metodo para matar ficha
+   public static void Matar(int x, int y){
+        if(board[x][y].toString()== "t" && board[x][y].getColor()=='b'){
+            if(muertas[0][3]!=null){
+                board[x][y]=muertas[7][3];
+            }
+            else{
+                board[x][y]=muertas[0][3];
+            }
+        }
+        
+        if(board[x][y].toString()== "c" && board[x][y].getColor()=='b'){
+            if(muertas[1][3]!=null){
+                board[x][y]=muertas[6][3];
+            }
+            else{
+                board[x][y]=muertas[6][3];
+            }
+        }
+        
+        if(board[x][y].toString()== "a" && board[x][y].getColor()=='b'){
+            if(muertas[2][3]!=null){
+                board[x][y]=muertas[5][3];
+            }
+            else{
+                board[x][y]=muertas[2][3];
+            }
+        }
+        
+        if(board[x][y].toString()== "q" && board[x][y].getColor()=='b'){
+            board[x][y]=muertas[3][3];
+            }
+        }
+        
+        if(board[x][y].toString()== "t" && board[x][y].getColor()=='n'){
+            if(muertas[0][0]!=null){
+                board[x][y]=muertas[7][0];
+            }
+            else{
+                board[x][y]=muertas[0][0];
+            }
+        }
+    
+        if(board[x][y].toString()== "c" && board[x][y].getColor()=='n'){
+            if(muertas[1][0]!=null){
+                board[x][y]=muertas[6][0];
+            }
+            else{
+                board[x][y]=muertas[1][0];
+            }
+        }
+    
+        if(board[x][y].toString()== "a" && board[x][y].getColor()=='n'){
+            if(muertas[2][0]!=null){
+                board[x][y]=muertas[5][0];
+            }
+            else{
+                board[x][y]=muertas[2][0];
+            }
+        }
+    
+        if(board[x][y].toString()== "q" && board[x][y].getColor()=='n'){
+            board[x][y]=muertas[3][0];
+        }
+        }
+
+        if(board[x][y].toString()== "p" && board[x][y].getColor()=='n'){
+            for(int h=0;h<8;h++){
+                if(muertas[h][1]!=null){
+                }
+                else{
+                    board[x][y]=muertas[h][1];
+                }
+         if(board[x][y].toString()== "p" && board[x][y].getColor()=='b'){
+            for(int h=0;h<8;h++){
+                if(muertas[h][2]!=null){
+                }
+                else{
+                    board[x][y]=muertas[h][2];
+                }
+          }
+        
     }
     
 }
