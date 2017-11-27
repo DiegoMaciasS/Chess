@@ -22,6 +22,12 @@ public class Chess {
         tjn="00:00:00:00";
         Juego.Juego(jB,jN,board);
     }
-      
+    public static void Movimiento (int x, int y, int fx, int fy){
+    
+    Tablero.getBoard()[x][y].MovimientoValido(fx, fy);
+    Tablero.Mover(x, y, fx, fy);
+    }
+    
+    
     
 }
