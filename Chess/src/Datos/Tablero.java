@@ -108,7 +108,9 @@ public class Tablero {
         Tablero.muertas = muertas;
     }
     
-    
+    public static void Mover(int xi, int yi, int xf, int yf){
+        
+    }
     
    public static void Matar(int x, int y){
         if(board[x][y].toString()== "t" && board[x][y].getColor()=='b'){
