@@ -109,7 +109,8 @@ public class Tablero {
     }
     
     public static void Mover(int xi, int yi, int xf, int yf){
-        
+        board[xf][yf]=board[xi][yi];
+        board[xi][yi]=null;
     }
     
    public static void Matar(int x, int y){
