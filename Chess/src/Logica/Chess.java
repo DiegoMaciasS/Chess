@@ -14,13 +14,13 @@ public class Chess {
         MenuPrincipal.mainMenu();//inicio del programa
     }
     
-    public static void inicio(String JB,String JN){//inicia el juego
+    public static void inicio(String JB,String JN,String tema){//inicia el juego
         Tablero board=new Tablero();
         jB=JB;
         jN=JN;
         tjb="00:00:00:00";
         tjn="00:00:00:00";
-        Juego.Juego(jB,jN,board);
+        Juego.Juego(jB,jN,board,tema);
     }
     public static void Movimiento (int x, int y, int fx, int fy){
     

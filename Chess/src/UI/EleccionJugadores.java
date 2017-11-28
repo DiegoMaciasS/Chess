@@ -6,6 +6,8 @@
 package UI;
 import Logica.Chess;
 import UI.Juego;
+import java.io.File;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 /**
  *
@@ -18,8 +20,12 @@ public class EleccionJugadores extends javax.swing.JFrame {
      */
     public EleccionJugadores() {
         initComponents();
+        String Directorio =(new File(".")).getAbsolutePath()+ "/src/resources/";
+        File f = new File(Directorio);
+        for(File archivo:f.listFiles()){
+            jComboBox1.addItem(archivo.getName());
+        }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -130,7 +136,6 @@ public class EleccionJugadores extends javax.swing.JFrame {
         });
 
         jComboBox1.setFont(new java.awt.Font("Traditional Arabic", 0, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default" }));
 
         jLabel5.setFont(new java.awt.Font("Traditional Arabic", 0, 18)); // NOI18N
         jLabel5.setText("Motivo:");
@@ -176,7 +181,8 @@ public class EleccionJugadores extends javax.swing.JFrame {
 
     private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
         if(jTextField1.getText()!=""&&jTextField2.getText()!=""){
-        Chess.inicio(jTextField1.getText(),jTextField2.getText());
+
+        Chess.inicio(jTextField1.getText(),jTextField2.getText(),jComboBox1.getSelectedItem().toString());
         this.hide();}
         else{
             JOptionPane.showMessageDialog(this, "Por favor, digite los nombres de los jugadores.", "Campos vacíos",JOptionPane.WARNING_MESSAGE);
